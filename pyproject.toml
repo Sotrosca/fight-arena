@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fight_arena"
-version = "0.1.0"
+version = "0.0.1"
 description = "Descripción de tu proyecto"
 authors = ["Tu Nombre <tu@email.com>"]
 
