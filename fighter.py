@@ -106,6 +106,8 @@ class Fighter:
         return self.stats.health
 
     def image(self):
-        image = pygame.image.load(os.path.join(os.path.dirname(__file__), "inu.jpg"))
+        image = pygame.image.load(
+            os.path.join(os.path.dirname(__file__), "assets/inu.jpg")
+        )
         resized_image = pygame.transform.scale(image, (100, 100))
         return resized_image
