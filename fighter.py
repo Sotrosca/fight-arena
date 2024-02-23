@@ -1,4 +1,5 @@
 import os
+import sys
 
 import pygame
 
@@ -107,7 +108,7 @@ class Fighter:
 
     def image(self):
         image = pygame.image.load(
-            os.path.join(os.path.dirname(__file__), "assets/inu.jpg")
+            os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets/inu.jpg")
         )
         resized_image = pygame.transform.scale(image, (100, 100))
         return resized_image
