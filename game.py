@@ -1,3 +1,5 @@
+import os
+
 import pygame
 
 import constants
@@ -45,7 +47,9 @@ class Game:
         self.screen = pygame.display.set_mode(
             (constants.SCREEN_WIDTH, constants.SCREEN_HEIGHT)
         )
-        self.background = pygame.image.load("./forest.jpg")
+        self.background = pygame.image.load(
+            os.path.join(os.path.dirname(__file__), "forest.jpg")
+        )
         self.background = pygame.transform.scale(
             self.background, (constants.SCREEN_WIDTH, constants.SCREEN_HEIGHT)
         )
