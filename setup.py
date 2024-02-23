@@ -7,6 +7,6 @@ setup(
     version="0.14",
     packages=find_packages(),
     py_modules=["game", "constants", "fighter", "layers", "components"],
-    data_files=[".", glob.glob("*.jpg")],
+    data_files=[(".", glob.glob("*.jpg"))],
     install_requires=["pygame==2.5.2"],
 )
