@@ -44,13 +44,11 @@ class GameLogic:
 
 
 class Game:
-    def __init__(self):
+    def __init__(self, background_file):
         self.screen = pygame.display.set_mode(
             (constants.SCREEN_WIDTH, constants.SCREEN_HEIGHT)
         )
-        self.background = pygame.image.load(
-            os.path.join(os.getcwd(), "assets/forest.jpg")
-        )
+        self.background = pygame.image.load(background_file)
         self.background = pygame.transform.scale(
             self.background, (constants.SCREEN_WIDTH, constants.SCREEN_HEIGHT)
         )
@@ -159,12 +157,15 @@ if __name__ == "__main__":
     pygame.init()  # Initialize all pygame modules
     pygame.font.init()  # Initialize the font module
 
+    background_file = os.path.join(os.getcwd(), "assets/forest.jpg")
+
     # Crear luchadores
-    fighter1 = Fighter("Baba Yaya", 100, 10)
-    fighter2 = Fighter("Inu culado", 120, 12)
+    fighters_image_path = os.path.join(os.getcwd(), "assets/inu.jpg")
+    fighter1 = Fighter("Baba Yaya", 100, 10, fighters_image_path)
+    fighter2 = Fighter("Inu culado", 120, 12, fighters_image_path)
 
     # Crear juego
-    game = Game()
+    game = Game(background_file)
 
     # Agregar luchadores al juego
     game.add_fighter(fighter1)

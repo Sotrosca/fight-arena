@@ -89,7 +89,7 @@ class Enrage(Attack):
 
 
 class Fighter:
-    def __init__(self, name, health, defense):
+    def __init__(self, name, health, defense, image_path):
         self.name = name
         self.stats = Stats(health, defense, 1)
         self.attacks = {
@@ -98,6 +98,7 @@ class Fighter:
             "Fear": Fear(),
             "Enrage": Enrage(),
         }
+        self.image_path = image_path
 
     def attack(self, attack_name):
         return self.attacks[attack_name]
@@ -107,6 +108,6 @@ class Fighter:
         return self.stats.health
 
     def image(self):
-        image = pygame.image.load(os.path.join(os.getcwd(), "assets/inu.jpg"))
+        image = pygame.image.load(self.image_path)
         resized_image = pygame.transform.scale(image, (100, 100))
         return resized_image
